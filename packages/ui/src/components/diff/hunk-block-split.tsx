@@ -172,7 +172,7 @@ export function renderSplitRows(
     const rightNum = rightLine?.newLineNumber ?? null;
 
     result.push(
-      <tr key={`${keyPrefix}-${i}`} className="group/split-row font-mono text-sm leading-6">
+      <tr key={`${keyPrefix}-L${leftNum ?? 'null'}-R${rightNum ?? 'null'}`} className="group/split-row font-mono text-sm leading-6">
         <SplitCell
           line={leftLine}
           side="left"
@@ -355,7 +355,7 @@ export function HunkBlockSplit(props: HunkBlockSplitProps) {
                   className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-md border border-deleted/40 bg-bg text-deleted hover:bg-deleted hover:text-white transition-colors cursor-pointer shadow-md"
                   title="Undo this change"
                 >
-                  <UndoIcon className="w-3 h-3" />
+                  <UndoIcon className="size-3" />
                   Undo
                 </button>
               </div>

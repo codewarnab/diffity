@@ -39,7 +39,7 @@ export function CommentLineNumber(props: CommentLineNumberProps) {
       {showCommentButton && lineNumber !== null && (
         <button
           className={cn(
-            'absolute right-[-2px] top-0.5 w-5 h-5 flex items-center justify-center rounded bg-accent text-white cursor-pointer z-10 hover:bg-accent-hover',
+            'absolute right-[-2px] top-0.5 size-5 flex items-center justify-center rounded bg-accent text-white cursor-pointer z-10 hover:bg-accent-hover',
             forceShowButton ? 'opacity-100' : 'opacity-0 group-hover/row:opacity-100 group-hover/line:opacity-100',
           )}
           onClick={(e) => {
@@ -51,7 +51,7 @@ export function CommentLineNumber(props: CommentLineNumberProps) {
           }}
           title="Add comment"
         >
-          <PlusIcon className="w-2.5 h-2.5" />
+          <PlusIcon className="size-2.5" />
         </button>
       )}
       {lineNumber ?? ''}

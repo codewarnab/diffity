@@ -108,7 +108,7 @@ function TourMarkdown(props: { content: string; onNavigateToFile?: (path: string
                 className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-accent/10 border border-accent/20 rounded text-[10px] font-medium text-accent hover:bg-accent/20 cursor-pointer transition-colors"
                 onClick={() => onSubHighlight(focus.startLine, focus.endLine, label)}
               >
-                <svg viewBox="0 0 25 25" fill="currentColor" className="w-2.5 h-2.5 shrink-0"><path d="M22.3281 5.11816C22.3281 4.70395 21.9923 4.36816 21.5781 4.36816C21.1639 4.36816 20.8281 4.70395 20.8281 5.11816V12.7874C20.8281 13.2016 20.4923 13.5374 20.0781 13.5374L10.4197 13.5374L10.4197 8.69196C10.4197 8.38857 10.2369 8.11506 9.95658 7.999C9.67626 7.88295 9.35363 7.94721 9.13917 8.16182L3.54761 13.7573C3.25496 14.0501 3.25496 14.5247 3.54763 14.8176L9.13919 20.4127C9.35365 20.6273 9.67627 20.6916 9.95659 20.5755C10.2369 20.4594 10.4197 20.1859 10.4197 19.8825L10.4197 15.0374L20.0781 15.0374C21.3208 15.0374 22.3281 14.0301 22.3281 12.7874V5.11816Z" /></svg>
+                <svg viewBox="0 0 25 25" fill="currentColor" className="size-2.5 shrink-0"><path d="M22.3281 5.11816C22.3281 4.70395 21.9923 4.36816 21.5781 4.36816C21.1639 4.36816 20.8281 4.70395 20.8281 5.11816V12.7874C20.8281 13.2016 20.4923 13.5374 20.0781 13.5374L10.4197 13.5374L10.4197 8.69196C10.4197 8.38857 10.2369 8.11506 9.95658 7.999C9.67626 7.88295 9.35363 7.94721 9.13917 8.16182L3.54761 13.7573C3.25496 14.0501 3.25496 14.5247 3.54763 14.8176L9.13919 20.4127C9.35365 20.6273 9.67627 20.6916 9.95659 20.5755C10.2369 20.4594 10.4197 20.1859 10.4197 19.8825L10.4197 15.0374L20.0781 15.0374C21.3208 15.0374 22.3281 14.0301 22.3281 12.7874V5.11816Z" /></svg>
                 {children}
               </button>
             );
@@ -228,7 +228,7 @@ export function TourPanel(props: TourPanelProps) {
           onClick={() => setCollapsed(false)}
           title="Show tour panel"
         >
-          <CompassIcon className="w-4 h-4" />
+          <CompassIcon className="size-4" />
         </button>
       </div>
     );
@@ -258,14 +258,14 @@ export function TourPanel(props: TourPanelProps) {
               onClick={() => setCollapsed(true)}
               title="Collapse tour panel"
             >
-              <SidebarIcon className="w-3.5 h-3.5" />
+              <SidebarIcon className="size-3.5" />
             </button>
             <button
               className="p-1 rounded-md text-text-muted hover:text-text hover:bg-hover cursor-pointer"
               onClick={onClose}
               title="Close tour"
             >
-              <XIcon className="w-3.5 h-3.5" />
+              <XIcon className="size-3.5" />
             </button>
           </div>
         </div>
@@ -275,14 +275,14 @@ export function TourPanel(props: TourPanelProps) {
           onClick={() => onStepChange(currentStepIndex - 1)}
           disabled={!hasPrev}
         >
-          <svg viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5"><path d="M9.78 12.78a.75.75 0 01-1.06 0L4.47 8.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L6.06 8l3.72 3.72a.75.75 0 010 1.06z" /></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor" className="size-3.5"><path d="M9.78 12.78a.75.75 0 01-1.06 0L4.47 8.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L6.06 8l3.72 3.72a.75.75 0 010 1.06z" /></svg>
         </button>
         <div ref={stepsRef} className="flex items-center gap-1 flex-1 overflow-x-auto scrollbar-none">
           {Array.from({ length: totalSteps }, (_, index) => (
             <button
-              key={index}
+              key={`step-${index}`}
               ref={index === currentStepIndex ? activeStepRef : undefined}
-              className={`w-6 h-6 rounded-full text-[10px] font-bold cursor-pointer transition-colors flex items-center justify-center shrink-0 ${
+              className={`size-6 rounded-full text-[10px] font-bold cursor-pointer transition-colors flex items-center justify-center shrink-0 ${
                 index === currentStepIndex
                   ? 'bg-accent text-white'
                   : 'bg-bg-tertiary text-text-muted hover:bg-hover hover:text-text'
@@ -298,7 +298,7 @@ export function TourPanel(props: TourPanelProps) {
           onClick={() => onStepChange(currentStepIndex + 1)}
           disabled={!hasNext}
         >
-          <svg viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" /></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor" className="size-3.5"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" /></svg>
         </button>
         </div>
       </div>

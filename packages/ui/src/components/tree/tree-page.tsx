@@ -360,7 +360,7 @@ export function TreePage(props: TreePageProps) {
           )}
           {info?.branch && (
             <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-diff-hunk-bg text-diff-hunk-text rounded font-mono text-[11px] shrink-0">
-              <GitBranchIcon className="w-3 h-3" />
+              <GitBranchIcon className="size-3" />
               {info.branch}
             </span>
           )}
@@ -427,8 +427,8 @@ export function TreePage(props: TreePageProps) {
             {isFileMode && fileContent && isRenderableFile(navPath) && (
               <SegmentedToggle
                 options={[
-                  { value: 'code', label: 'Code', icon: <CodeIcon className="w-3 h-3" /> },
-                  { value: 'preview', label: 'Preview', icon: <FileIcon className="w-3 h-3" /> },
+                  { value: 'code', label: 'Code', icon: <CodeIcon className="size-3" /> },
+                  { value: 'preview', label: 'Preview', icon: <FileIcon className="size-3" /> },
                 ]}
                 value={previewMode}
                 onChange={setPreviewMode}

@@ -24,7 +24,7 @@ export function GeneralComments(props: GeneralCommentsProps) {
       <div className="flex items-center gap-2 px-3 py-2 text-sm select-none">
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="text-[10px] w-5 h-5 shrink-0 flex items-center justify-center text-text-muted cursor-pointer"
+          className="text-[10px] size-5 shrink-0 flex items-center justify-center text-text-muted cursor-pointer"
         >
           {isExpanded ? '\u25bc' : '\u25b6'}
         </button>
@@ -32,7 +32,7 @@ export function GeneralComments(props: GeneralCommentsProps) {
           onClick={() => setIsExpanded(!isExpanded)}
           className="flex items-center gap-2 cursor-pointer"
         >
-          <CommentIcon className="w-3.5 h-3.5 text-text-muted" />
+          <CommentIcon className="size-3.5 text-text-muted" />
           <span className="text-text-secondary">General comments</span>
           {threads.length > 0 && (
             <span className="text-xs font-medium bg-accent/15 text-accent px-1.5 py-0.5 rounded-full">{threads.length}</span>

@@ -67,7 +67,7 @@ export function ThreadCard(props: ThreadCardProps) {
             className="text-text-muted hover:text-deleted transition-colors cursor-pointer ml-1"
             title="Delete thread"
           >
-            <TrashIcon className="w-3.5 h-3.5" />
+            <TrashIcon className="size-3.5" />
           </button>
         </div>
       </div>

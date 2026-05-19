@@ -82,22 +82,22 @@ export function WordDiff(props: WordDiffProps) {
         if (seg.type === 'equal') {
           charOffset += seg.text.length;
           if (syntaxTokens && syntaxTokens.length > 0) {
-            return <span key={i}>{applySyntaxToText(seg.text, segOffset, syntaxTokens)}</span>;
+            return <span key={`${seg.type}-${segOffset}`}>{applySyntaxToText(seg.text, segOffset, syntaxTokens)}</span>;
           }
-          return <span key={i}>{seg.text}</span>;
+          return <span key={`${seg.type}-${segOffset}`}>{seg.text}</span>;
         }
 
         if (seg.type === 'delete' && line.type === 'delete') {
           charOffset += seg.text.length;
           if (syntaxTokens && syntaxTokens.length > 0) {
             return (
-              <span key={i} className="bg-diff-del-word rounded-sm">
+              <span key={`del-${segOffset}`} className="bg-diff-del-word rounded-sm">
                 {applySyntaxToText(seg.text, segOffset, syntaxTokens)}
               </span>
             );
           }
           return (
-            <span key={i} className="bg-diff-del-word rounded-sm">
+            <span key={`del-${segOffset}`} className="bg-diff-del-word rounded-sm">
               {seg.text}
             </span>
           );
@@ -107,13 +107,13 @@ export function WordDiff(props: WordDiffProps) {
           charOffset += seg.text.length;
           if (syntaxTokens && syntaxTokens.length > 0) {
             return (
-              <span key={i} className="bg-diff-add-word rounded-sm">
+              <span key={`add-${segOffset}`} className="bg-diff-add-word rounded-sm">
                 {applySyntaxToText(seg.text, segOffset, syntaxTokens)}
               </span>
             );
           }
           return (
-            <span key={i} className="bg-diff-add-word rounded-sm">
+            <span key={`add-${segOffset}`} className="bg-diff-add-word rounded-sm">
               {seg.text}
             </span>
           );

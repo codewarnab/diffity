@@ -39,7 +39,7 @@ function AuthorAvatar(props: { name: string; avatarUrl?: string; type: 'user' | 
 
   if (avatarUrl) {
     return (
-      <img src={avatarUrl} alt={name} className="w-5 h-5 rounded-full" />
+      <img src={avatarUrl} alt={name} className="size-5 rounded-full" />
     );
   }
 
@@ -47,7 +47,7 @@ function AuthorAvatar(props: { name: string; avatarUrl?: string; type: 'user' | 
   const initial = name.charAt(0).toUpperCase();
 
   return (
-    <div className={`w-5 h-5 rounded-full ${bgColor} flex items-center justify-center text-white text-[10px] font-medium`}>
+    <div className={`size-5 rounded-full ${bgColor} flex items-center justify-center text-white text-[10px] font-medium`}>
       {initial}
     </div>
   );
@@ -111,14 +111,14 @@ export function CommentBubble(props: CommentBubbleProps) {
                 className="text-text-muted hover:text-text cursor-pointer"
                 title="Edit comment"
               >
-                <PencilIcon className="w-3.5 h-3.5" />
+                <PencilIcon className="size-3.5" />
               </button>
               <button
                 onClick={onDelete}
                 className="text-text-muted hover:text-deleted cursor-pointer"
                 title="Delete comment"
               >
-                <TrashIcon className="w-3.5 h-3.5" />
+                <TrashIcon className="size-3.5" />
               </button>
             </div>
           )}

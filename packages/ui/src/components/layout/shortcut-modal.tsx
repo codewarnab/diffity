@@ -66,7 +66,7 @@ export function ShortcutModal(props: ShortcutModalProps) {
           className="p-1 rounded-md text-text-muted hover:text-text hover:bg-hover cursor-pointer"
           onClick={onClose}
         >
-          <XIcon className="w-4 h-4" />
+          <XIcon className="size-4" />
         </button>
       </div>
       <div className="px-5 py-4">

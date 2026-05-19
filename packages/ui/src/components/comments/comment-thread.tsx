@@ -72,7 +72,7 @@ export function CommentThread(props: CommentThreadProps) {
           onClick={() => setIsCollapsed(false)}
           className='thread-card inline-flex items-center gap-1.5 px-2 py-1 text-xs text-text-muted hover:text-text-secondary hover:bg-hover rounded-md transition-colors cursor-pointer'
         >
-          <CommentIcon className='w-3.5 h-3.5' />
+          <CommentIcon className='size-3.5' />
           <span>
             {thread.comments.length} comment
             {thread.comments.length !== 1 ? 's' : ''}

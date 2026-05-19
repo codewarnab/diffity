@@ -39,7 +39,7 @@ export function OptionsMenu(props: OptionsMenuProps) {
         onClick={() => setShowMenu(!showMenu)}
         title="More options"
       >
-        <EllipsisIcon className="w-4 h-4" />
+        <EllipsisIcon className="size-4" />
       </button>
       {showMenu && (
         <div className="absolute right-0 top-full mt-1 w-48 py-1 bg-bg-secondary rounded-md shadow-lg ring-1 ring-border z-50">
@@ -51,7 +51,7 @@ export function OptionsMenu(props: OptionsMenuProps) {
               close();
             }}
           >
-            {theme === 'light' ? <MoonIcon className="w-3.5 h-3.5" /> : <SunIcon className="w-3.5 h-3.5" />}
+            {theme === 'light' ? <MoonIcon className="size-3.5" /> : <SunIcon className="size-3.5" />}
             {theme === 'light' ? 'Dark mode' : 'Light mode'}
           </button>
           <div className="border-t border-border my-1" />
@@ -62,7 +62,7 @@ export function OptionsMenu(props: OptionsMenuProps) {
             className={menuItemClass}
             onClick={close}
           >
-            <GitHubIcon className="w-3.5 h-3.5" />
+            <GitHubIcon className="size-3.5" />
             GitHub
           </a>
         </div>

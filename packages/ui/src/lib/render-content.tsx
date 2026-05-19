@@ -10,8 +10,8 @@ export function renderContent(line: DiffLine, syntaxTokens?: SyntaxToken[]) {
   if (syntaxTokens && syntaxTokens.length > 0) {
     return (
       <>
-        {syntaxTokens.map((token, i) => (
-          <span key={i} style={token.color ? { color: token.color } : undefined}>
+        {syntaxTokens.map((token) => (
+          <span key={token.text} style={token.color ? { color: token.color } : undefined}>
             {token.text}
           </span>
         ))}

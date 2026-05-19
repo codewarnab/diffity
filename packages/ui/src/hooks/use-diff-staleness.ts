@@ -46,7 +46,7 @@ export function useDiffStaleness(ref?: string, enabled = true) {
       }
     }
 
-    poll();
+    (async () => { await poll(); })();
 
     return () => {
       cancelled = true;

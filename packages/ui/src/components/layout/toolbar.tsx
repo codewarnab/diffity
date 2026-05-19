@@ -139,8 +139,8 @@ export function Toolbar(props: ToolbarProps) {
   }, [threads, diff, diffRef]);
 
   const viewModeOptions = useMemo(() => [
-    { value: 'unified' as ViewMode, label: 'Unified', icon: <UnifiedViewIcon className="w-3.5 h-3.5" /> },
-    { value: 'split' as ViewMode, label: 'Split', icon: <SplitViewIcon className="w-3.5 h-3.5" /> },
+    { value: 'unified' as ViewMode, label: 'Unified', icon: <UnifiedViewIcon className="size-3.5" /> },
+    { value: 'split' as ViewMode, label: 'Split', icon: <SplitViewIcon className="size-3.5" /> },
   ], []);
 
   return (
@@ -149,7 +149,7 @@ export function Toolbar(props: ToolbarProps) {
         {repoName && <span className="font-semibold text-text text-sm truncate">{repoName}</span>}
         {branch && (
           <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-diff-hunk-bg text-diff-hunk-text rounded font-mono text-[11px] shrink-0">
-            <GitBranchIcon className="w-3 h-3" />
+            <GitBranchIcon className="size-3" />
             {branch}
           </span>
         )}
@@ -167,7 +167,7 @@ export function Toolbar(props: ToolbarProps) {
             onClick={() => setShowGitHub(true)}
             className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-bg-tertiary rounded-md font-mono text-[11px] text-text-muted hover:text-text transition-colors cursor-pointer shrink-0"
           >
-            <GitHubIcon className="w-3 h-3" />
+            <GitHubIcon className="size-3" />
             #{githubDetails.prNumber}
           </button>
         )}
@@ -192,7 +192,7 @@ export function Toolbar(props: ToolbarProps) {
                   close();
                 }}
               >
-                {hideWhitespace ? <EyeOffIcon className="w-3.5 h-3.5" /> : <EyeIcon className="w-3.5 h-3.5" />}
+                {hideWhitespace ? <EyeOffIcon className="size-3.5" /> : <EyeIcon className="size-3.5" />}
                 {hideWhitespace ? 'Show whitespace' : 'Hide whitespace'}
                 {hideWhitespace && <span className="ml-auto text-accent text-[10px]">On</span>}
               </button>
@@ -203,7 +203,7 @@ export function Toolbar(props: ToolbarProps) {
                   close();
                 }}
               >
-                <KeyboardIcon className="w-3.5 h-3.5" />
+                <KeyboardIcon className="size-3.5" />
                 Keyboard shortcuts
                 <span className="ml-auto text-text-muted">?</span>
               </button>

@@ -8,7 +8,7 @@ export function ChevronIcon(props: ChevronIconProps) {
   return (
     <svg
       className={cn(
-        'w-3 h-3 shrink-0 text-text-muted transition-transform duration-150',
+        'size-3 shrink-0 text-text-muted transition-transform duration-150',
         props.expanded && 'rotate-90'
       )}
       viewBox="0 0 16 16"

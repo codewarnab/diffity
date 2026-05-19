@@ -34,7 +34,7 @@ export function OrphanedThreads(props: OrphanedThreadsProps) {
         className="flex items-center gap-2 w-full px-4 py-2 text-xs text-text-muted hover:text-text-secondary transition-colors cursor-pointer"
       >
         <ChevronIcon expanded={isExpanded} />
-        <CommentIcon className="w-3.5 h-3.5" />
+        <CommentIcon className="size-3.5" />
         <span>
           {threads.length} outdated comment{threads.length !== 1 ? 's' : ''}
         </span>

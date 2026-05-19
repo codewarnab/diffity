@@ -61,18 +61,29 @@ export function FileTreeItem(props: FileTreeItemProps) {
 
     return (
       <>
-        <button
+        <div
           className="flex items-center gap-1.5 w-full py-1 pr-2 text-left text-[13px] hover:bg-hover cursor-pointer"
           style={{ paddingLeft: `${paddingLeft}px` }}
-          onClick={handleRowClick}
-          onContextMenu={handleContextMenu}
+          role="group"
         >
-          <span onClick={handleChevronClick} className="relative flex items-center rounded p-0.5 hover:bg-border/70 transition-colors">
+          <button
+            type="button"
+            onClick={handleChevronClick}
+            className="relative flex items-center rounded p-0.5 hover:bg-border/70 transition-colors"
+            aria-label={isExpanded ? 'Collapse folder' : 'Expand folder'}
+          >
             <ChevronIcon expanded={isExpanded} />
-          </span>
-          <FolderIcon open={isExpanded} />
-          <span className="truncate text-text">{node.name}</span>
-        </button>
+          </button>
+          <button
+            type="button"
+            className="flex items-center gap-1.5 flex-1 min-w-0"
+            onClick={handleRowClick}
+            onContextMenu={handleContextMenu}
+          >
+            <FolderIcon open={isExpanded} />
+            <span className="truncate text-text">{node.name}</span>
+          </button>
+        </div>
         {isExpanded && node.children.map(child => (
           <FileTreeItem
             key={child.path}
@@ -122,7 +133,7 @@ export function FileTreeItem(props: FileTreeItemProps) {
         onFileClick(node.path);
       }}
     >
-      {node.file ? <StatusBadge status={node.file.status} compact /> : <FileIcon className="w-4 h-4 shrink-0 text-text-muted" />}
+      {node.file ? <StatusBadge status={node.file.status} compact /> : <FileIcon className="size-4 shrink-0 text-text-muted" />}
       <span className={cn('flex-1 min-w-0 truncate text-text', isReviewed && 'line-through')}>
         {node.name}
       </span>
@@ -131,7 +142,7 @@ export function FileTreeItem(props: FileTreeItemProps) {
           className="flex items-center gap-1 text-accent shrink-0"
           title={`${threadCount} open comment thread${threadCount === 1 ? '' : 's'}`}
         >
-          <CommentIcon className="w-3 h-3" />
+          <CommentIcon className="size-3" />
           <span className="text-[10px] font-semibold leading-none">{threadCount}</span>
         </span>
       )}

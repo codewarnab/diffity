@@ -58,7 +58,7 @@ export function PathComments(props: PathCommentsProps) {
           className="inline-flex items-center gap-1.5 px-2 py-1 rounded-md text-text-muted hover:text-accent hover:bg-hover transition-colors cursor-pointer"
           title={`Comment on ${label}`}
         >
-          <CommentIcon className="w-3.5 h-3.5" />
+          <CommentIcon className="size-3.5" />
           <span className="text-xs">
             {threads.length > 0
               ? `${threads.length} comment${threads.length !== 1 ? 's' : ''}`
@@ -70,7 +70,7 @@ export function PathComments(props: PathCommentsProps) {
       {isExpanded && (
         <div className={`mt-3 rounded-lg overflow-hidden ${threads.length > 0 ? 'bg-accent/5' : 'bg-bg-secondary'}`}>
           <div className="flex items-center gap-2 px-3 py-2 text-sm">
-            <CommentIcon className="w-3.5 h-3.5 text-text-muted" />
+            <CommentIcon className="size-3.5 text-text-muted" />
             <span className="text-text-secondary text-xs">Comments on {label}</span>
             {threads.length > 0 && (
               <span className="text-xs font-medium bg-accent/15 text-accent px-1.5 py-0.5 rounded-full">{threads.length}</span>

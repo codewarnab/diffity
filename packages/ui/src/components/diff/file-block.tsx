@@ -393,7 +393,7 @@ export function FileBlock(props: FileBlockProps) {
         className={`group flex items-center gap-2 px-3 py-1.5 border-border text-xs sticky top-0 z-10 shadow-sticky ${highlighted ? 'animate-flash-highlight' : 'bg-bg-secondary'}`}
       >
         <IconButton
-          className="text-[10px] w-4 h-4 shrink-0"
+          className="text-[10px] size-4 shrink-0"
           onClick={() => onToggleCollapse(filePath)}
           title={collapsed ? 'Expand' : 'Collapse'}
         >
@@ -419,9 +419,9 @@ export function FileBlock(props: FileBlockProps) {
           title="Copy file path"
         >
           {pathCopied ? (
-            <CheckIcon className="w-3 h-3 text-added" />
+            <CheckIcon className="size-3 text-added" />
           ) : (
-            <CopyIcon className="w-3 h-3" />
+            <CopyIcon className="size-3" />
           )}
         </button>
         {file.status !== 'modified' && <StatusBadge status={file.status} />}
@@ -429,7 +429,7 @@ export function FileBlock(props: FileBlockProps) {
         <div className="ml-auto flex items-center gap-2.5 shrink-0">
           {(fileThreads.length + orphanedThreads.length) > 0 && (
             <span className="text-[11px] text-text-muted flex items-center gap-1">
-              <CommentIcon className="w-3 h-3" />
+              <CommentIcon className="size-3" />
               {fileThreads.length + orphanedThreads.length}
               {orphanedThreads.length > 0 && (
                 <ThreadBadge variant="outdated" size="sm">
@@ -441,8 +441,8 @@ export function FileBlock(props: FileBlockProps) {
           {renderable && (
             <SegmentedToggle
               options={[
-                { value: 'source', label: 'Source', icon: <CodeIcon className="w-3 h-3" /> },
-                { value: 'rendered', label: 'Rendered', icon: <FileIcon className="w-3 h-3" /> },
+                { value: 'source', label: 'Source', icon: <CodeIcon className="size-3" /> },
+                { value: 'rendered', label: 'Rendered', icon: <FileIcon className="size-3" /> },
               ]}
               value={showRichDiff ? 'rendered' : 'source'}
               onChange={(v) => setShowRichDiff(v === 'rendered')}
@@ -452,13 +452,13 @@ export function FileBlock(props: FileBlockProps) {
             <DiffStats additions={file.additions} deletions={file.deletions} />
             <div className="flex gap-px">
               {Array.from({ length: addBlocks }).map((_, i) => (
-                <span key={`a${i}`} className="w-1.5 h-1.5 rounded-sm bg-added" />
+                <span key={`a${i}`} className="size-1.5 rounded-sm bg-added" />
               ))}
               {Array.from({ length: delBlocks }).map((_, i) => (
-                <span key={`d${i}`} className="w-1.5 h-1.5 rounded-sm bg-deleted" />
+                <span key={`d${i}`} className="size-1.5 rounded-sm bg-deleted" />
               ))}
               {Array.from({ length: neutralBlocks }).map((_, i) => (
-                <span key={`n${i}`} className="w-1.5 h-1.5 rounded-sm bg-border" />
+                <span key={`n${i}`} className="size-1.5 rounded-sm bg-border" />
               ))}
             </div>
           </div>
@@ -467,7 +467,7 @@ export function FileBlock(props: FileBlockProps) {
               type="checkbox"
               checked={reviewed}
               onChange={() => onReviewedChange(filePath, !reviewed)}
-              className="accent-added cursor-pointer w-3 h-3"
+              className="accent-added cursor-pointer size-3"
             />
             Viewed
           </label>
@@ -531,7 +531,7 @@ export function FileBlock(props: FileBlockProps) {
 
                 return (
                   <HunkWithGap
-                    key={i}
+                    key={`hunk-${hunk.oldStart}-${hunk.newStart}`}
                     hunk={hunk}
                     viewMode={viewMode}
                     syntaxMap={syntaxMap}

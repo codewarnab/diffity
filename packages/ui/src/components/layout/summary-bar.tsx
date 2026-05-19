@@ -18,7 +18,7 @@ export function SummaryBar(props: SummaryBarProps) {
         {repoName && <span className="font-semibold text-text">{repoName}</span>}
         {branch && (
           <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-diff-hunk-bg text-diff-hunk-text rounded-md font-mono text-xs">
-            <GitBranchIcon className="w-3 h-3" />
+            <GitBranchIcon className="size-3" />
             {branch}
           </span>
         )}

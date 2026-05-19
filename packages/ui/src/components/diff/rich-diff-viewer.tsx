@@ -35,7 +35,7 @@ export function RichDiffViewer(props: RichDiffViewerProps) {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-12">
-        <Spinner className="w-5 h-5 text-text-muted" />
+        <Spinner className="size-5 text-text-muted" />
       </div>
     );
   }

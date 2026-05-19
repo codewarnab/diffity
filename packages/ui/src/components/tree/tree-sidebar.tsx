@@ -145,7 +145,7 @@ export const TreeSidebar = forwardRef<HTMLInputElement, TreeSidebarProps>(functi
           onClick={() => setCollapsed(false)}
           title="Show sidebar"
         >
-          <SidebarIcon className="w-4 h-4" />
+          <SidebarIcon className="size-4" />
         </button>
       </div>
     );
@@ -156,7 +156,7 @@ export const TreeSidebar = forwardRef<HTMLInputElement, TreeSidebarProps>(functi
       <div className="flex items-center justify-between px-3 py-2.5 border-b border-border">
         <span className="text-xs font-medium text-text-secondary flex items-center gap-2 uppercase tracking-wider">
           Files
-          <span className="inline-flex items-center justify-center min-w-5 h-5 px-1.5 bg-bg-tertiary rounded-full text-[10px] font-semibold text-text-muted">
+          <span className="inline-flex items-center justify-center min-size-5 px-1.5 bg-bg-tertiary rounded-full text-[10px] font-semibold text-text-muted">
             {paths.length}
           </span>
         </span>
@@ -173,9 +173,9 @@ export const TreeSidebar = forwardRef<HTMLInputElement, TreeSidebarProps>(functi
             title={allExpanded ? 'Collapse all' : 'Expand all'}
           >
             {allExpanded ? (
-              <CollapseAllIcon className="w-3.5 h-3.5" />
+              <CollapseAllIcon className="size-3.5" />
             ) : (
-              <ExpandAllIcon className="w-3.5 h-3.5" />
+              <ExpandAllIcon className="size-3.5" />
             )}
           </button>
           <button
@@ -183,13 +183,13 @@ export const TreeSidebar = forwardRef<HTMLInputElement, TreeSidebarProps>(functi
             onClick={() => setCollapsed(true)}
             title="Hide sidebar"
           >
-            <SidebarIcon className="w-3.5 h-3.5" />
+            <SidebarIcon className="size-3.5" />
           </button>
         </div>
       </div>
       <div className="flex items-center gap-2 px-3 py-2">
         <div className="relative flex-1">
-          <SearchIcon className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-text-muted pointer-events-none" />
+          <SearchIcon className="absolute left-2.5 top-1/2 -translate-y-1/2 size-3.5 text-text-muted pointer-events-none" />
           <input
             ref={ref}
             className="w-full h-8 pl-7 pr-7 border border-border rounded-md bg-bg text-xs outline-none focus:border-accent focus:ring-1 focus:ring-accent/20 placeholder:text-text-muted"
@@ -203,7 +203,7 @@ export const TreeSidebar = forwardRef<HTMLInputElement, TreeSidebarProps>(functi
               className="absolute right-2.5 top-1/2 -translate-y-1/2 text-text-muted hover:text-text cursor-pointer"
               onClick={() => setSearch('')}
             >
-              <XIcon className="w-3 h-3" />
+              <XIcon className="size-3" />
             </button>
           )}
         </div>
@@ -218,9 +218,9 @@ export const TreeSidebar = forwardRef<HTMLInputElement, TreeSidebarProps>(functi
             title={effectiveCommentedOnly ? 'Show all files' : 'Show only files with open comments'}
             aria-pressed={effectiveCommentedOnly}
           >
-            <CommentIcon className="w-3.5 h-3.5" />
+            <CommentIcon className="size-3.5" />
             <span
-              className={`inline-flex items-center justify-center min-w-[16px] h-[16px] px-1 rounded-full text-[9px] font-semibold leading-none tabular-nums ${
+              className={`inline-flex items-center justify-center min-size-[16px] px-1 rounded-full text-[9px] font-semibold leading-none tabular-nums ${
                 effectiveCommentedOnly
                   ? 'bg-bg text-accent'
                   : 'bg-bg-tertiary text-text-secondary'

@@ -109,7 +109,7 @@ export function GitHubDialog(props: GitHubDialogProps) {
         <div className="flex items-start justify-between px-4 pt-4 pb-2">
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2 mb-1">
-              <GitHubIcon className="w-4 h-4 text-text shrink-0" />
+              <GitHubIcon className="size-4 text-text shrink-0" />
               <span className="text-sm font-semibold text-text truncate">{details.prTitle}</span>
             </div>
             <div className="flex items-center gap-1.5 text-[11px] text-text-muted pl-6">
@@ -122,7 +122,7 @@ export function GitHubDialog(props: GitHubDialogProps) {
             onClick={onClose}
             className="p-1 rounded-md text-text-muted hover:text-text hover:bg-hover transition-colors cursor-pointer shrink-0 mt-0.5"
           >
-            <XIcon className="w-3.5 h-3.5" />
+            <XIcon className="size-3.5" />
           </button>
         </div>
 
@@ -151,9 +151,9 @@ export function GitHubDialog(props: GitHubDialogProps) {
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md bg-accent text-white hover:bg-accent-hover transition-colors cursor-pointer disabled:opacity-50 shrink-0"
               >
                 {pushing ? (
-                  <span className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <span className="size-3 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 ) : (
-                  <UploadIcon className="w-3 h-3" />
+                  <UploadIcon className="size-3" />
                 )}
                 Push to PR
               </button>
@@ -174,9 +174,9 @@ export function GitHubDialog(props: GitHubDialogProps) {
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md bg-bg-tertiary text-text-secondary hover:text-text transition-colors cursor-pointer disabled:opacity-50 shrink-0"
               >
                 {pulling ? (
-                  <span className="w-3 h-3 border-2 border-text-muted/30 border-t-text-muted rounded-full animate-spin" />
+                  <span className="size-3 border-2 border-text-muted/30 border-t-text-muted rounded-full animate-spin" />
                 ) : (
-                  <DownloadIcon className="w-3 h-3" />
+                  <DownloadIcon className="size-3" />
                 )}
                 Pull from PR
               </button>
@@ -190,7 +190,7 @@ export function GitHubDialog(props: GitHubDialogProps) {
             className="flex items-center justify-center gap-1.5 w-full py-2 text-xs text-text-muted hover:text-text transition-colors"
           >
             Open on GitHub
-            <svg className="w-3 h-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg className="size-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M6 3h7v7" />
               <path d="M13 3L6 10" />
             </svg>

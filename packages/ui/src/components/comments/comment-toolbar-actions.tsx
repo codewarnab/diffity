@@ -45,14 +45,14 @@ export function CommentToolbarActions(props: CommentToolbarActionsProps) {
           className="flex items-center px-1.5 text-text-muted hover:bg-hover hover:text-text transition-colors cursor-pointer"
           title="Previous comment"
         >
-          <ChevronUpIcon className="w-3.5 h-3.5" />
+          <ChevronUpIcon className="size-3.5" />
         </button>
         <button
           onClick={goToNext}
           className="flex items-center px-1.5 text-text-muted hover:bg-hover hover:text-text transition-colors cursor-pointer"
           title="Next comment"
         >
-          <ChevronDownIcon className="w-3.5 h-3.5" />
+          <ChevronDownIcon className="size-3.5" />
         </button>
       </div>
       <div className="flex items-stretch bg-bg-tertiary rounded-md overflow-hidden">
@@ -63,12 +63,12 @@ export function CommentToolbarActions(props: CommentToolbarActionsProps) {
         >
           {copied ? (
             <>
-              <CheckIcon className="w-3 h-3 text-added" />
+              <CheckIcon className="size-3 text-added" />
               Copied
             </>
           ) : (
             <>
-              <CopyIcon className="w-3 h-3" />
+              <CopyIcon className="size-3" />
               Copy comments
             </>
           )}
@@ -78,7 +78,7 @@ export function CommentToolbarActions(props: CommentToolbarActionsProps) {
           className="flex items-center px-2 text-text-muted hover:bg-hover hover:text-red-500 transition-colors cursor-pointer"
           title="Delete all comments"
         >
-          <TrashIcon className="w-3.5 h-3.5" />
+          <TrashIcon className="size-3.5" />
         </button>
       </div>
       {showDeleteConfirm && (
